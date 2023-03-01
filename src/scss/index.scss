@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+* {
+  font-family: 'Bahnschrift';
+}
+
+body {
+  background-color: $black;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+}

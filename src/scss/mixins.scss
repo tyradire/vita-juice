@@ -1,0 +1,16 @@
+@mixin button-font {
+  font-family: 'Bahnschrift';
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+@mixin button-menu {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+}

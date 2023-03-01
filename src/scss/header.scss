@@ -1,0 +1,188 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.header {
+  width: 100%;
+  height: 149px;
+  background-color: $white;
+  display: flex;
+  &__logo-container {
+    position: relative;
+    width: 343px;
+    svg {
+      cursor: pointer;
+      width: 150px;
+      height: 166px;
+      position: absolute;
+      left: calc(50% - 75px);
+      bottom: -50%;
+      &:hover path:first-of-type {
+        fill: $grey-hover;
+      }
+    }
+  }
+  &__buttons {
+    width: 1503px;
+    height: 36px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__navigation {
+    margin-top: 14px;
+    display: flex;
+  }
+}
+
+.buttons {
+  &__region {
+    height: 36px;
+    color: $black;
+    @include button-font;
+    @include button-menu;
+    &:hover {
+      color: $yellow;
+    }
+    &:hover svg path {
+      fill: $yellow;
+    }
+    p {
+      margin: 0 16px 0 8px;
+    }
+  }
+  &__user-side {
+    display: flex
+  }
+}
+
+.user-side {
+  &__basket {
+    margin-right: 80px;
+    &:hover {
+      color: $yellow;
+    }
+    &:hover svg path {
+      fill: $yellow;
+    }
+    @include button-font;
+    @include button-menu;
+  }
+  &__login {
+    &:hover {
+      color: $yellow;
+    }
+    &:hover svg path {
+      fill: $yellow;
+    }
+    @include button-font;
+    @include button-menu;
+  }
+}
+
+.navigation {
+  &__list {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    li {
+      cursor: pointer;
+      position: relative;
+      text-transform: uppercase;
+      @include button-font;
+      margin-left: 36px;
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &::after {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        left: calc(50% - 12.5px);
+        bottom: -30px;
+        content: '';
+        background-color: $grey;
+        border-radius: 50%;
+      }
+      &:nth-child(1):hover  {
+        color: $orange-dim;
+        &::after {
+          background-color: $orange-dim;
+        }
+      }
+      &:nth-child(2):hover  {
+        color: $yellow;
+        &::after {
+          background-color: $yellow;
+        }
+      }
+      &:nth-child(3):hover  {
+        color: $pink;
+        &::after {
+          background-color: $pink;
+        }
+      }
+      &:nth-child(4):hover  {
+        color: $pink-dark;
+        &::after {
+          background-color: $pink-dark;
+        }
+      }
+      &:nth-child(5):hover  {
+        color: $orange;
+        &::after {
+          background-color: $orange;
+        }
+      }
+      &:nth-child(6):hover  {
+        color: $lilac;
+        &::after {
+          background-color: $lilac;
+        }
+      }
+      &:nth-child(7):hover  {
+        color: $green;
+        &::after {
+          background-color: $green;
+        }
+      }
+      &:nth-child(8):hover  {
+        color: $green-grass;
+        &::after {
+          background-color: $green-grass;
+        }
+      }
+    }
+  }
+  &__links {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    margin-left: 115px;
+    li {
+      position: relative;
+      margin-left: 56px;
+      text-transform: uppercase;
+      @include button-font;
+      &:first-of-type {
+        margin-left: 0;
+      }
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+      &:hover {
+        &::after {
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          left: calc(50% - 12.5px);
+          bottom: -30px;
+          content: '';
+          background-color: $black;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
