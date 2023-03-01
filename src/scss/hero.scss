@@ -4,7 +4,7 @@
 .hero {
   position: relative;
   max-width: 1920px;
-  height: 775px;
+  height: auto;
   margin: 0 auto;
   box-sizing: border-box;
   &__slider {
@@ -15,6 +15,6 @@
   &__item {
     width: 100%;
     height: auto;
-    z-index: 10;
+    object-fit: cover;
   }
 }

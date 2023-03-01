@@ -5,6 +5,20 @@
   font-weight: 400;
 }
 
+@mixin title-font {
+  font-family: 'Bahnschrift';
+  font-size: 80px;
+  line-height: 96px;
+  font-weight: 400;
+}
+
+@mixin item-font {
+  font-family: 'Bahnschrift';
+  font-size: 35px;
+  line-height: 42px;
+  font-weight: 400;
+}
+
 @mixin button-menu {
   cursor: pointer;
   display: flex;
