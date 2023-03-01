@@ -1,0 +1,11 @@
+.line {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  &_top {
+    top: -10px;
+  }
+  &_bottom {
+    bottom: -9px;
+  }
+}
