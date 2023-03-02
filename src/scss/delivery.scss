@@ -1,0 +1,103 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.delivery {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  &__title {
+    text-align: center;
+    margin: 30px 0 40px;
+    text-transform: uppercase;
+    @include title-font;
+  }
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    height: 1262px;
+    background-image: url('../images/delivery-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &__areas {
+    padding-top: 39px;
+    margin-left: 73px;
+  }
+  &__subtitle {
+    margin: 0;
+    color: $white;
+    text-transform: uppercase;
+    @include popular-item-font;
+  }
+  &__categories {
+    width: 870px;
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__category {
+    margin-top: 100px;
+    position: relative;
+    width: 190px;
+    text-align: center;
+    color: $white;
+    @include button-font;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: calc(50% - 30px);
+      background-color: $orange-dim;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    &:first-of-type::before {
+      background-color: $yellow;
+    }
+    &:last-of-type::before {
+      background-color: $pink;
+    }
+  }
+  &__map-wrapper {
+    margin-top: 24px;
+    margin-left: 73px;
+  }
+  &__payment {
+    margin-top: 39px;
+    margin-left: 73px;
+  }
+  &__shipping {
+    margin-top: 39px;
+    margin-left: 73px;
+  }
+  &__payment-options {
+    margin-top: 20px;
+    width: 872px;
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    &_sm {
+      width: 530px;
+    }
+  }
+  &__option {
+    text-align: center;
+    width: 252px;
+  }
+  &__option-title {
+    margin: 0;
+    color: $white;
+    text-transform: uppercase;
+    @include volume-font;
+  }
+  &__option-description {
+    margin: 0;
+    margin-top: 5px;
+    color: $white;
+    @include button-font;
+  }
+}
