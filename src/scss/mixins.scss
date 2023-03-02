@@ -5,6 +5,13 @@
   font-weight: 400;
 }
 
+@mixin title-card-font {
+  font-family: 'Bahnschrift';
+  font-size: 35px;
+  line-height: 42px;
+  font-weight: 400;
+}
+
 @mixin volume-font {
   font-family: 'Bahnschrift';
   font-size: 25px;
@@ -30,6 +37,13 @@
   font-family: 'Bahnschrift';
   font-size: 40px;
   line-height: 48px;
+  font-weight: 400;
+}
+
+@mixin advantage-font {
+  font-family: 'Bahnschrift';
+  font-size: 30px;
+  line-height: 36px;
   font-weight: 400;
 }
 
