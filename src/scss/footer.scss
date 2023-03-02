@@ -1,0 +1,28 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.footer {
+  position: relative;
+  background-color: $green-pine;
+  display: flex;
+  padding: 44px 0 50px;
+  &__call {
+    margin: 0;
+    margin-left: 68px;
+    text-transform: uppercase;
+    color: $white;
+    @include title-font;
+  }
+  &__links {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    margin-left: 150px;
+  }
+  &__link {
+    margin-left: 37px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
