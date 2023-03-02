@@ -5,6 +5,13 @@
   font-weight: 400;
 }
 
+@mixin volume-font {
+  font-family: 'Bahnschrift';
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
 @mixin title-font {
   font-family: 'Bahnschrift';
   font-size: 80px;
@@ -16,6 +23,13 @@
   font-family: 'Bahnschrift';
   font-size: 35px;
   line-height: 42px;
+  font-weight: 400;
+}
+
+@mixin popular-item-font {
+  font-family: 'Bahnschrift';
+  font-size: 40px;
+  line-height: 48px;
   font-weight: 400;
 }
 

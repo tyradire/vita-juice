@@ -1,0 +1,86 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.popular {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  &__title {
+    text-align: center;
+    margin: 0;
+    padding: 30px 0 40px;
+    text-transform: uppercase;
+    @include title-font;
+  }
+  &__slider {
+    position: relative;
+  }
+}
+
+.slider {
+  &__wrapper {
+    width: 1590px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 58px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 402px;
+    padding: 50px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover {
+      box-shadow: 0px 20px 50px rgba(77, 75, 73, 0.2);
+    }
+  }
+  &__image {
+    width: auto;
+    height: 274px;
+  }
+  &__product-name {
+    margin: 0;
+    color: $black-hover;
+    @include popular-item-font;
+  }
+  &__product-volume {
+    margin: 10px 0 15px;
+    color: $grey-dark;
+    @include volume-font;
+  }
+  &__price-wrapper {
+    display: flex;
+  }
+  &__price {
+    margin: 0;
+    color: $black-hover;
+    @include popular-item-font;
+  }
+  &__like-btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    &:hover svg path {
+      fill: $yellow;
+      stroke: $yellow;
+    }
+  }
+  &__basket-btn {
+    margin-top: 17px;
+    cursor: pointer;
+    color: $black-hover;
+    background-color: $yellow;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 38px;
+    text-transform: uppercase;
+    @include button-font;
+    &:hover {
+      color: $white;
+      background-color: $black-hover;
+    }
+  }
+}
