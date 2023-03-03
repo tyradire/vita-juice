@@ -38,7 +38,7 @@
     justify-content: space-between;
   }
   &__category {
-    margin-top: 100px;
+    margin-top: 90px;
     position: relative;
     width: 190px;
     text-align: center;
@@ -47,7 +47,7 @@
     &::before {
       content: '';
       position: absolute;
-      top: -80px;
+      top: -74px;
       left: calc(50% - 30px);
       background-color: $orange-dim;
       width: 60px;
@@ -74,7 +74,7 @@
     margin-left: 73px;
   }
   &__payment-options {
-    margin-top: 20px;
+    margin-top: 24px;
     width: 872px;
     list-style: none;
     padding-left: 0;

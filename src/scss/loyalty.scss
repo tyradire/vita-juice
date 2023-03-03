@@ -8,7 +8,7 @@
   padding-top: 20px;
   &__title {
     text-align: center;
-    margin: 30px 0 40px;
+    margin: 12px 0 32px;
     text-transform: uppercase;
     @include title-font;
   }
@@ -34,7 +34,7 @@
 }
 
 .card {
-  margin: 51px 49px;
+  margin: 51px 49px 22px;
   display: flex;
   &__title {
     width: 103px;
@@ -47,7 +47,7 @@
   &__balance-wrapper {
     margin-left: auto;
     text-align: end;
-    margin-top: 16px;
+    margin-top: 10px;
   }
   &__balance-title {
     margin: 0;
@@ -81,6 +81,7 @@
   }
   &__owner-value {
     margin: 0;
+    margin-top: 15px;
     color: $white;
     @include button-font;
   }
@@ -105,7 +106,7 @@
     padding-left: 0;
   }
   &__item {
-    margin-top: 30px;
+    margin-top: 18px;
     display: flex;
     align-items: center;
   }
@@ -114,7 +115,7 @@
     @include advantage-font;
   }
   &__get-card {
-    margin-top: 89px;
+    margin-top: 80px;
     display: flex;
     align-items: center;
   }
@@ -127,7 +128,7 @@
   &__button {
     cursor: pointer;
     margin: 0;
-    margin-left: 33px;
+    margin-left: 42px;
     padding: 14px 40px;
     color: $black-hover;
     text-transform: uppercase;

@@ -8,8 +8,8 @@
   &__wrapper {
     max-width: 1774px;
     margin: 0 auto;
-    padding-top: 40px;
-    padding-bottom: 48px;
+    padding-top: 44px;
+    padding-bottom: 52px;
   }
   &__title {
     margin: 0;
@@ -40,7 +40,7 @@
     padding-left: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0 168px;
+    gap: 38px 168px;
   }
   &__link {
     a {

@@ -8,7 +8,7 @@
   &__title {
     text-align: center;
     margin: 0;
-    padding: 30px 0 40px;
+    padding: 34px 0 34px;
     text-transform: uppercase;
     @include title-font;
   }
@@ -43,23 +43,32 @@
   }
   &__product-name {
     margin: 0;
+    margin-top: 19px;
+    text-transform: uppercase;
+    text-align: center;
     color: $black-hover;
     @include popular-item-font;
   }
   &__product-volume {
-    margin: 10px 0 15px;
+    margin: 8px 0 15px;
     color: $grey-dark;
     @include volume-font;
   }
   &__price-wrapper {
+    width: 154px;
     display: flex;
+    align-items: center;
   }
   &__price {
     margin: 0;
+    margin-left: 12px;
     color: $black-hover;
     @include popular-item-font;
   }
   &__like-btn {
+    margin-left: 20px;
+    width: 36px;
+    height: 33px;
     cursor: pointer;
     border: none;
     background-color: transparent;
