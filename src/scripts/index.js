@@ -19,21 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const toggleSlideLeft = (x) => {
-    sliderPosition = sliderPosition + x;
-    slider.style.transform = `translateX(${sliderPosition}px)`;
+    if (sliderPosition === 0) {
+      sliderPosition = - 3840;
+      slider.style.transform = `translateX(${sliderPosition}px)`;
+    }  else if (sliderPosition < 0) {
+      sliderPosition = sliderPosition + x;
+      slider.style.transform = `translateX(${sliderPosition}px)`;
+    }
     selectDot();
   }
 
   const toggleSlideRight = (x) => {
-    sliderPosition = sliderPosition - x;
-    slider.style.transform = `translateX(${sliderPosition}px)`;
+    if (sliderPosition === -3840) {
+      sliderPosition = 0;
+      slider.style.transform = `translateX(${sliderPosition}px)`;
+    } else if (sliderPosition > -3840) {
+      sliderPosition = sliderPosition - x;
+      slider.style.transform = `translateX(${sliderPosition}px)`;
+    }
     selectDot();
   }
 
   function toggleSlide(x, direction) {
-    if (direction === 'left' && sliderPosition < 0) {
+    if (direction === 'left' && sliderPosition <= 0) {
       toggleSlideLeft(x);
-    } else if (direction === 'right' && sliderPosition > -3840) {
+    } else if (direction === 'right' && sliderPosition >= -3840) {
       toggleSlideRight(x);
     } else return;
   }
