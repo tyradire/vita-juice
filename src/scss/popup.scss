@@ -1,0 +1,93 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.popup {
+  position: relative;
+  top: 236px;
+  left: calc(50% - 357.5px);
+  width: 715px;
+  height: 455px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 50px;
+  box-sizing: border-box;
+  &__top {
+    height: 87px;
+    width: 100%;
+    background-color: $yellow;
+    border-radius: 50px 50px 0px 0px;
+  }
+  &__title {
+    margin: 0;
+    margin-top: 28px;
+    margin-left: 58px;
+    text-transform: uppercase;
+    color: $black-hover;
+    @include volume-font;
+  }
+  &__close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 35px;
+    right: 60px;
+    background-color: transparent;
+    border: none;
+    width: 18px;
+    height: 18px;
+  }
+  &__content {
+    padding: 0px 56px 35px 58px;
+    height: 368px;
+    background-color: $white;
+    border-radius: 0 0 50px 50px;
+  }
+  &__region-subtitle {
+    margin: 0;
+    margin-top: 33px;
+    text-transform: uppercase;
+    color: $black-hover;
+    @include volume-font;
+  }
+  &__accept-btn {
+    cursor: pointer;
+    margin: 0;
+    margin-top: 21px;
+    padding: 6px 32.5px;
+    text-transform: uppercase;
+    color: $black-hover;
+    background-color: $yellow;
+    border: none;
+    border-radius: 30px;
+    @include button-font;
+    &:hover {
+      color: $white;
+      background-color: $black-hover;
+    }
+  }
+  &__region-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 170px);
+    gap: 10px 50px;
+  }
+  &__region-item {
+    cursor: pointer;
+    margin: 0;
+    color: $black-hover;
+    @include button-font;
+  }
+}
+
+.popup-cover {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(196, 196, 196, 0.76);
+  z-index: 100;
+  &_opened {
+    display: block;
+  }
+}
