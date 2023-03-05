@@ -18,9 +18,15 @@ const cities = [
 ];
 const cityItems = document.querySelectorAll('.popup__region-item');
 const selectRegionButton = document.querySelector('.buttons__region');
-const regionPopup = document.querySelector('.popup-cover');
-const regionCloseBtn = document.querySelector('.popup__close-btn');
+const loginButton = document.querySelector('.user-side__login');
+const regionPopup = document.getElementById('popup-region');
+const loginPopup = document.getElementById('popup-login');
 const regionCity = document.querySelector('.popup__region-city');
+
+const loginForm = document.getElementById('login-form');
+
+const regionCloseBtn = document.getElementById('region-close-btn');
+const loginCloseBtn = document.getElementById('login-close-btn');
 
 cityItems.forEach((elem, index) => elem.textContent = cities[index])
 regionCity.textContent = cities[2]
@@ -91,18 +97,28 @@ function selectSlideWithDot(e) {
   }
 }
 
-const openSelectRegionPopup = () => {
-  regionPopup.classList.add('popup-cover_opened');
+const openPopup = (elem) => {
+  elem.classList.add('popup-cover_opened');
 }
 
-const closeSelectRegionPopup = () => {
-  regionPopup.classList.remove('popup-cover_opened');
+const closePopup = (elem) => {
+  elem.classList.remove('popup-cover_opened');
 }
 
-sliderDots.forEach(elem => elem.addEventListener('click', (e) => selectSlideWithDot(e)))
+const submitLoginForm = (e) => {
+  e.preventDefault();
+  closePopup(loginPopup);
+}
 
-arrowLeft.addEventListener('click', (e) => toggleSlide(windowWidth, 'left'))
-arrowRight.addEventListener('click', (e) => toggleSlide(windowWidth, 'right'))
+sliderDots.forEach(elem => elem.addEventListener('click', (e) => selectSlideWithDot(e)));
 
-selectRegionButton.addEventListener('click', openSelectRegionPopup)
-regionCloseBtn.addEventListener('click', closeSelectRegionPopup)
+arrowLeft.addEventListener('click', (e) => toggleSlide(windowWidth, 'left'));
+arrowRight.addEventListener('click', (e) => toggleSlide(windowWidth, 'right'));
+
+selectRegionButton.addEventListener('click', (e) => openPopup(regionPopup));
+loginButton.addEventListener('click', (e) => openPopup(loginPopup));
+
+regionCloseBtn.addEventListener('click', (e) => closePopup(regionPopup));
+loginCloseBtn.addEventListener('click', (e) => closePopup(loginPopup));
+
+loginForm.addEventListener('submit', submitLoginForm)

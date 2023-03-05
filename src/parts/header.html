@@ -94,11 +94,11 @@
       </ul>
     </nav>
   </div>
-  <div class="popup-cover">
-    <div class="popup">
+  <div class="popup-cover" id="popup-region">
+    <div class="popup popup_lg">
       <div class="popup__top">
         <p class="popup__title">Ваш регион</p>
-        <button class="popup__close-btn">
+        <button class="popup__close-btn" id="region-close-btn">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_307_336)">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.385714 17.6143C0.642857 17.8714 0.9 18 1.28571 18C1.67143 18 1.92857 17.8714 2.18571 17.6143L9 10.8L15.8143 17.6143C16.0714 17.8714 16.4571 18 16.7143 18C16.9714 18 17.3571 17.8714 17.6143 17.6143C18.1286 17.1 18.1286 16.3286 17.6143 15.8143L10.8 9L17.6143 2.18571C18.1286 1.67143 18.1286 0.9 17.6143 0.385714C17.1 -0.128571 16.3286 -0.128571 15.8143 0.385714L9 7.2L2.18571 0.385714C1.67143 -0.128571 0.9 -0.128571 0.385714 0.385714C-0.128571 0.9 -0.128571 1.67143 0.385714 2.18571L7.2 9L0.385714 15.8143C-0.128571 16.3286 -0.128571 17.1 0.385714 17.6143Z" fill="#2B2A29"/>
@@ -131,5 +131,45 @@
         </ul>
       </div>
     </div>
-  </div> 
+  </div>
+  <div class="popup-cover" id="popup-login">
+    <div class="popup popup_md">
+      <div class="popup__top">
+        <p class="popup__title">Вход на сайт</p>
+        <button class="popup__close-btn" id="login-close-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_307_336)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.385714 17.6143C0.642857 17.8714 0.9 18 1.28571 18C1.67143 18 1.92857 17.8714 2.18571 17.6143L9 10.8L15.8143 17.6143C16.0714 17.8714 16.4571 18 16.7143 18C16.9714 18 17.3571 17.8714 17.6143 17.6143C18.1286 17.1 18.1286 16.3286 17.6143 15.8143L10.8 9L17.6143 2.18571C18.1286 1.67143 18.1286 0.9 17.6143 0.385714C17.1 -0.128571 16.3286 -0.128571 15.8143 0.385714L9 7.2L2.18571 0.385714C1.67143 -0.128571 0.9 -0.128571 0.385714 0.385714C-0.128571 0.9 -0.128571 1.67143 0.385714 2.18571L7.2 9L0.385714 15.8143C-0.128571 16.3286 -0.128571 17.1 0.385714 17.6143Z" fill="#2B2A29"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_307_336">
+            <rect width="18" height="18" fill="white"/>
+            </clipPath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+      <form class="popup__login-form" id="login-form">
+        <label class="login-form__label">
+          <p class="login-form__subtitle">Имя</p>
+          <div class="login-form__input-wrapper">
+            <input class="login-form__input" type="text" placeholder="Ваше имя">
+          </div>
+        </label>
+        <label class="login-form__label">
+          <p class="login-form__subtitle">Телефон</p>
+          <div class="login-form__input-wrapper">
+            <input class="login-form__input" type="phone" placeholder="+7">
+          </div>
+        </label>
+        <label class="login-form__label">
+          <p class="login-form__subtitle">Введите код</p>
+          <div class="login-form__input-wrapper">
+            <input class="login-form__input" type="text" placeholder="Код">
+          </div>
+        </label>
+        <input class="login-form__submit-btn" type="submit" value="Войти" id="login-submit-btn">
+      </form>
+    </div>
+  </div>
 </header>

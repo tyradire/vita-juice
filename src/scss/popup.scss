@@ -5,14 +5,12 @@
   position: relative;
   top: 236px;
   left: calc(50% - 357.5px);
-  width: 715px;
-  height: 455px;
   display: flex;
   flex-direction: column;
   border-radius: 50px;
   box-sizing: border-box;
   &__top {
-    height: 87px;
+    min-height: 87px;
     width: 100%;
     background-color: $yellow;
     border-radius: 50px 50px 0px 0px;
@@ -81,6 +79,24 @@
       color: $yellow;
     }
   }
+  &_lg {
+    width: 715px;
+    height: 455px;
+  }
+  &_md {
+    width: 627px;
+    height: 391px;
+  }
+  &__login-form {
+    position: relative;
+    width: 512px;
+    height: auto;
+    padding: 6px 58px 133px;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: 0 0 50px 50px;
+  }
 }
 
 .popup-cover {
@@ -92,5 +108,53 @@
   z-index: 100;
   &_opened {
     display: block;
+  }
+}
+
+.login-form {
+  &__label {
+    display: flex;
+    margin-top: 27px;
+  }
+  &__subtitle {
+    margin: 0;
+    width: 180px;
+    color: $black-hover;
+    @include advantage-font;
+  }
+  &__input-wrapper {
+    position: relative;
+    &:after {
+      position: absolute;
+      bottom: -10px;
+      left: 27px;
+      content: url('../images/login-line.png');
+    }
+  }
+  &__input {
+    width: 300px;
+    margin-left: 27px;
+    border: none;
+    outline: none;
+    color: $black-hover;
+    @include advantage-font;
+  }
+  &__submit-btn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    width: 116px;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: $yellow;
+    color: $black-hover;
+    text-transform: uppercase;
+    @include button-font;
+    &:hover {
+      background-color: $black-hover;
+      color: $white;
+    }
   }
 }
