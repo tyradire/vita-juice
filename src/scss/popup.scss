@@ -4,7 +4,6 @@
 .popup {
   position: relative;
   top: 236px;
-  left: calc(50% - 357.5px);
   display: flex;
   flex-direction: column;
   border-radius: 50px;
@@ -82,10 +81,18 @@
   &_lg {
     width: 715px;
     height: 455px;
+    left: calc(50% - 357.5px);
   }
   &_md {
     width: 627px;
     height: 391px;
+    left: calc(50% - 313.5px);
+  }
+  &_sm {
+    width: 521px;
+    height: 703px;
+    top: 5px;
+    left: calc(100% - 596px);
   }
   &__login-form {
     position: relative;
@@ -96,6 +103,9 @@
     flex-direction: column;
     background-color: $white;
     border-radius: 0 0 50px 50px;
+  }
+  &_basket {
+    background-color: $white;
   }
 }
 
@@ -156,5 +166,14 @@
       background-color: $black-hover;
       color: $white;
     }
+  }
+}
+
+.popup-basket {
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
   }
 }

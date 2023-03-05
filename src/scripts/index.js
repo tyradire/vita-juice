@@ -19,8 +19,12 @@ const cities = [
 const cityItems = document.querySelectorAll('.popup__region-item');
 const selectRegionButton = document.querySelector('.buttons__region');
 const loginButton = document.querySelector('.user-side__login');
+const basketButton = document.querySelector('.user-side__basket');
+
 const regionPopup = document.getElementById('popup-region');
+const basketPopup = document.getElementById('popup-basket');
 const loginPopup = document.getElementById('popup-login');
+
 const regionCity = document.querySelector('.popup__region-city');
 
 const loginForm = document.getElementById('login-form');
@@ -117,6 +121,7 @@ arrowRight.addEventListener('click', (e) => toggleSlide(windowWidth, 'right'));
 
 selectRegionButton.addEventListener('click', (e) => openPopup(regionPopup));
 loginButton.addEventListener('click', (e) => openPopup(loginPopup));
+basketButton.addEventListener('click', (e) => openPopup(basketPopup));
 
 regionCloseBtn.addEventListener('click', (e) => closePopup(regionPopup));
 loginCloseBtn.addEventListener('click', (e) => closePopup(loginPopup));
