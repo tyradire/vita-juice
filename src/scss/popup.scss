@@ -107,6 +107,16 @@
   &_basket {
     background-color: $white;
   }
+  &__total {
+    margin-top: auto;
+    padding: 23px 89px 23px 28px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $yellow;
+    text-transform: uppercase;
+    @include volume-font;
+  }
 }
 
 .popup-cover {
@@ -172,8 +182,86 @@
 .popup-basket {
   &__list {
     list-style: none;
-    padding-left: 0;
     display: flex;
     flex-direction: column;
+    padding-top: 33px;
+    padding-left: 30px;
+    padding-right: 29px;
+    overflow-y: scroll;
+  }
+  &__item {
+    position: relative;
+    min-height: 211px;
+    margin-top: 32px;
+    display: flex;
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+  &__image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+  &__title {
+    width: 160px;
+    margin: 0;
+    color: $black-hover;
+    text-transform: uppercase;
+    @include volume-font;
+  }
+  &__value {
+    margin: 0;
+    margin-top: 11px;
+    color: $black-hover;
+    @include button-font;
+  }
+  &__ingredients {
+    margin: 0;
+    margin-top: 14px;
+    width: 180px;
+    color: $grey-dark;
+    @include addition-font;
+  }
+  &__counter {
+    width: 93px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 16px;
+    color: $black-hover;
+    background-color: $yellow;
+    border-radius: 30px;
+    @include button-font;
+  }
+  &__total {
+    margin: 0 10px;
+  }
+  &__button {
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    color: $black-hover;
+    background-color: transparent;
+    font-size: 20px;
+    &_minus {
+      margin-bottom: 3px;
+    }
+  }
+  &__total-price {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    color: $black-hover;
+    text-transform: uppercase;
+    @include volume-font;
+  }
+}
+
+.total {
+  &__sum {
+    margin: 0;
   }
 }
