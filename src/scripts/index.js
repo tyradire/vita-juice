@@ -16,11 +16,40 @@ const cities = [
   'Новосибирск',
   'Уфа'
 ];
+const basket = [
+  {
+    title: 'Гранатовый сок',
+    image: '../images/grenate.png',
+    value: '300 мл',
+    ingridients: 'Гранат, лед',
+    cost: 575
+  },
+  {
+    title: 'Грин',
+    image: '../images/green.png',
+    value: '500 мл',
+    ingridients: 'Сельдерей, яблоко, шпинат, спирулина, лед',
+    cost: 425
+  },
+  {
+    title: 'Гранатовый сок 2',
+    image: '../images/grenate.png',
+    value: '300 мл',
+    ingridients: 'Гранат, лед',
+    cost: 575
+  }
+];
+
+// Header product counter
+const productCounter = document.querySelector('.user-side__basket-counter');
+productCounter.textContent = basket.length;
+
 const cityItems = document.querySelectorAll('.popup__region-item');
 const selectRegionButton = document.querySelector('.buttons__region');
 const loginButton = document.querySelector('.user-side__login');
 const basketButton = document.querySelector('.user-side__basket');
 
+// Popups
 const regionPopup = document.getElementById('popup-region');
 const basketPopup = document.getElementById('popup-basket');
 const loginPopup = document.getElementById('popup-login');
@@ -29,8 +58,10 @@ const regionCity = document.querySelector('.popup__region-city');
 
 const loginForm = document.getElementById('login-form');
 
+// Popup close buttons
 const regionCloseBtn = document.getElementById('region-close-btn');
 const loginCloseBtn = document.getElementById('login-close-btn');
+const basketCloseBtn = document.getElementById('basket-close-btn');
 
 cityItems.forEach((elem, index) => elem.textContent = cities[index])
 regionCity.textContent = cities[2]
@@ -103,10 +134,12 @@ function selectSlideWithDot(e) {
 
 const openPopup = (elem) => {
   elem.classList.add('popup-cover_opened');
+  document.body.style.overflowY = "hidden";
 }
 
 const closePopup = (elem) => {
   elem.classList.remove('popup-cover_opened');
+  document.body.style.overflowY = "visible";
 }
 
 const submitLoginForm = (e) => {
@@ -125,5 +158,6 @@ basketButton.addEventListener('click', (e) => openPopup(basketPopup));
 
 regionCloseBtn.addEventListener('click', (e) => closePopup(regionPopup));
 loginCloseBtn.addEventListener('click', (e) => closePopup(loginPopup));
+basketCloseBtn.addEventListener('click', (e) => closePopup(basketPopup));
 
 loginForm.addEventListener('submit', submitLoginForm)

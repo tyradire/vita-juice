@@ -184,10 +184,23 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    padding-top: 33px;
     padding-left: 30px;
     padding-right: 29px;
     overflow-y: scroll;
+    margin: 0;
+    margin-top: 33px;
+    margin-right: 36px;
+    &::-webkit-scrollbar {
+      width: 24px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 24px;
+      background-color: $grey-light;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 24px;
+      background-color: $yellow;
+    }
   }
   &__item {
     position: relative;
@@ -257,6 +270,32 @@
     color: $black-hover;
     text-transform: uppercase;
     @include volume-font;
+  }
+  &__delete-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 23px;
+    height: 23px;
+    border: none;
+    background-color: transparent;
+    &:hover svg path {
+      fill: $yellow;
+    }
+  }
+  &__close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    right: -24px;
+    object-fit: cover;
+    border: none;
+    background-color: transparent;
+    svg {
+      width: 36px;
+      height: 36px;
+    }
   }
 }
 
