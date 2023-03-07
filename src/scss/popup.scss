@@ -91,7 +91,7 @@
   &_sm {
     width: 521px;
     height: 703px;
-    top: 5px;
+    top: 40px;
     left: calc(100% - 596px);
   }
   &__login-form {
@@ -287,8 +287,8 @@
   &__close-btn {
     cursor: pointer;
     position: absolute;
-    top: 18px;
-    right: -24px;
+    top: -28px;
+    right: -28px;
     object-fit: cover;
     border: none;
     background-color: transparent;

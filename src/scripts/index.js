@@ -16,10 +16,10 @@ const cities = [
   'Новосибирск',
   'Уфа'
 ];
-const basket = [
+const basketData = [
   {
     title: 'Гранатовый сок',
-    image: '../images/grenate.png',
+    image: '../images/granate.png',
     value: '300 мл',
     ingridients: 'Гранат, лед',
     cost: 575
@@ -33,16 +33,23 @@ const basket = [
   },
   {
     title: 'Гранатовый сок 2',
-    image: '../images/grenate.png',
+    image: '../images/granate.png',
     value: '300 мл',
     ingridients: 'Гранат, лед',
     cost: 575
+  },
+  {
+    title: 'Грин',
+    image: '../images/green.png',
+    value: '500 мл',
+    ingridients: 'Сельдерей, яблоко, шпинат, спирулина, лед',
+    cost: 425
   }
 ];
 
 // Header product counter
 const productCounter = document.querySelector('.user-side__basket-counter');
-productCounter.textContent = basket.length;
+productCounter.textContent = basketData.length;
 
 const cityItems = document.querySelectorAll('.popup__region-item');
 const selectRegionButton = document.querySelector('.buttons__region');
@@ -161,3 +168,43 @@ loginCloseBtn.addEventListener('click', (e) => closePopup(loginPopup));
 basketCloseBtn.addEventListener('click', (e) => closePopup(basketPopup));
 
 loginForm.addEventListener('submit', submitLoginForm)
+
+// Basket
+
+class BasketCard {
+  constructor({title, image, value, ingridients, cost}) {
+    this._title = title;
+    this._image = image;
+    this._value = value;
+    this._ingridients = ingridients;
+    this._cost = cost;
+  }
+
+  _getTemplate() {
+    const cardElement = document
+    .getElementById('basket-item-template')
+    .content
+    .querySelector('.popup-basket__item')
+    .cloneNode(true);
+
+    return cardElement;
+  }
+
+  generateBasketCard() {
+    this._element = this._getTemplate();
+
+    this._element.querySelector('.popup-basket__title').textContent = this._title;
+    this._element.querySelector('.popup-basket__image').src = this._image;
+    this._element.querySelector('.popup-basket__value').textContent = this._value;
+    this._element.querySelector('.popup-basket__ingredients').textContent = this._ingridients;
+    this._element.querySelector('.popup-basket__total-price').textContent = this._cost;
+
+    return this._element;
+  }
+}
+
+basketData.forEach((item) => {
+  const basketItem = new BasketCard(item);
+  const card = basketItem.generateBasketCard()
+  document.querySelector('.popup-basket__list').append(card);
+})
