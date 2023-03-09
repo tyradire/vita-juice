@@ -172,6 +172,9 @@ loginForm.addEventListener('submit', submitLoginForm)
 
 // Basket
 
+let totalSum = document.getElementById('total-sum');
+totalSum.textContent = 2000;
+
 class BasketCard {
   constructor({title, image, value, ingridients, cost}) {
     this._title = title;
@@ -212,16 +215,25 @@ basketData.forEach((item, index) => {
 })
 
 const deleteButtons = document.querySelectorAll('.popup-basket__delete-btn');
-const basketItems = document.querySelectorAll('.popup-basket__item');
+let basketItems = document.querySelectorAll('.popup-basket__item');
 
 const deleteItemFromBasket = (el) => {
   el.remove();
   productCounter.textContent--
+  basketItems = document.querySelectorAll('.popup-basket__item')
+  console.log(basketItems)
 }
 
 deleteButtons.forEach(elem => elem.addEventListener('click', e => deleteItemFromBasket(e.currentTarget.parentElement)))
 
 // Add to basket from section popular
+
+const refreshTotalSum = () => {
+  basketItems = document.querySelectorAll('.popup-basket__item');
+  let basketPrices = [];
+  basketItems.forEach(el => basketPrices.push(+(el.querySelector('.popup-basket__total-price').textContent.replace('₽', ''))))
+  totalSum.textContent = basketPrices.reduce((acc, curr) => acc + curr)
+}
 
 const addItemToBasket = (el) => {
   const title = el.querySelector('.slider__product-name').textContent;
@@ -236,6 +248,7 @@ const addItemToBasket = (el) => {
   productCounter.textContent++
   const deleteButton = card.querySelector('.popup-basket__delete-btn');
   deleteButton.addEventListener('click', e => deleteItemFromBasket(e.currentTarget.parentElement))
+  refreshTotalSum();
 }
 
 const addButtons = document.querySelectorAll('.slider__basket-btn');
