@@ -48,8 +48,9 @@ const basketData = [
 ];
 
 // Header product counter
+let basketItemsCounter = basketData.length;
 const productCounter = document.querySelector('.user-side__basket-counter');
-productCounter.textContent = basketData.length;
+productCounter.textContent = basketItemsCounter;
 
 const cityItems = document.querySelectorAll('.popup__region-item');
 const selectRegionButton = document.querySelector('.buttons__region');
@@ -210,10 +211,32 @@ basketData.forEach((item, index) => {
   document.querySelector('.popup-basket__list').append(card);
 })
 
+const deleteButtons = document.querySelectorAll('.popup-basket__delete-btn');
+const basketItems = document.querySelectorAll('.popup-basket__item');
+
 const deleteItemFromBasket = (el) => {
   el.remove();
   productCounter.textContent--
 }
 
-const deleteButtons = document.querySelectorAll('.popup-basket__delete-btn');
-deleteButtons.forEach((elem) => elem.addEventListener('click', e => deleteItemFromBasket(e.currentTarget.parentElement)))
+deleteButtons.forEach(elem => elem.addEventListener('click', e => deleteItemFromBasket(e.currentTarget.parentElement)))
+
+// Add to basket from section popular
+
+const addItemToBasket = (el) => {
+  const title = el.querySelector('.slider__product-name').textContent;
+  const image = el.querySelector('.slider__image').src;
+  const value = el.querySelector('.slider__product-volume').textContent;
+  const ingridients = 'Ингридиенты';
+  const cost = el.querySelector('.slider__price').textContent;
+  const basketItem = new BasketCard({title, image, value, ingridients, cost});
+  const card = basketItem.generateBasketCard();
+  card.id = 'basket-item-' + (basketItemsCounter++ +1);
+  document.querySelector('.popup-basket__list').append(card);
+  productCounter.textContent++
+  const deleteButton = card.querySelector('.popup-basket__delete-btn');
+  deleteButton.addEventListener('click', e => deleteItemFromBasket(e.currentTarget.parentElement))
+}
+
+const addButtons = document.querySelectorAll('.slider__basket-btn');
+addButtons.forEach(elem => elem.addEventListener('click', e => addItemToBasket(e.currentTarget.parentElement)))
