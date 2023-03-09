@@ -203,8 +203,17 @@ class BasketCard {
   }
 }
 
-basketData.forEach((item) => {
+basketData.forEach((item, index) => {
   const basketItem = new BasketCard(item);
-  const card = basketItem.generateBasketCard()
+  const card = basketItem.generateBasketCard();
+  card.id = 'basket-item-' + (index + 1);
   document.querySelector('.popup-basket__list').append(card);
 })
+
+const deleteItemFromBasket = (el) => {
+  el.remove();
+  productCounter.textContent--
+}
+
+const deleteButtons = document.querySelectorAll('.popup-basket__delete-btn');
+deleteButtons.forEach((elem) => elem.addEventListener('click', e => deleteItemFromBasket(e.currentTarget.parentElement)))
