@@ -63,3 +63,19 @@
   border: none;
   text-transform: uppercase;
 }
+
+// Mobile mixins
+
+@mixin title-font-mobile {
+  font-family: 'Bahnschrift';
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 400;
+}
+
+@mixin item-font-mobile {
+  font-family: 'Bahnschrift';
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 400;
+}
