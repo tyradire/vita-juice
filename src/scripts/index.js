@@ -93,7 +93,7 @@ const selectDot = () => {
 
 const toggleSlideLeft = (x) => {
   if (sliderPosition === 0) {
-    sliderPosition = - 3840;
+    sliderPosition = - (windowWidth*2);
     slider.style.transform = `translateX(${sliderPosition}px)`;
   }  else if (sliderPosition < 0) {
     sliderPosition = sliderPosition + x;
@@ -103,10 +103,10 @@ const toggleSlideLeft = (x) => {
 }
 
 const toggleSlideRight = (x) => {
-  if (sliderPosition === -3840) {
+  if (sliderPosition === -(windowWidth*2)) {
     sliderPosition = 0;
     slider.style.transform = `translateX(${sliderPosition}px)`;
-  } else if (sliderPosition > -3840) {
+  } else if (sliderPosition > -(windowWidth*2)) {
     sliderPosition = sliderPosition - x;
     slider.style.transform = `translateX(${sliderPosition}px)`;
   }
@@ -116,7 +116,7 @@ const toggleSlideRight = (x) => {
 function toggleSlide(x, direction) {
   if (direction === 'left' && sliderPosition <= 0) {
     toggleSlideLeft(x);
-  } else if (direction === 'right' && sliderPosition >= -3840) {
+  } else if (direction === 'right' && sliderPosition >= -(windowWidth*2)) {
     toggleSlideRight(x);
   } else return;
 }
@@ -132,22 +132,20 @@ function selectSlideWithDot(e) {
     sliderPosition = 0
     slider.style.transform = `translateX(${sliderPosition}px)`;
   } else if (e.currentTarget === sliderDots[1]) {
-    sliderPosition = -1920
+    sliderPosition = -windowWidth
     slider.style.transform = `translateX(${sliderPosition}px)`;
   } else {
-    sliderPosition = -3840
+    sliderPosition = -(windowWidth*2)
     slider.style.transform = `translateX(${sliderPosition}px)`;
   }
 }
 
 const openPopup = (elem) => {
   elem.classList.add('popup-cover_opened');
-  document.body.style.overflowY = "hidden";
 }
 
 const closePopup = (elem) => {
   elem.classList.remove('popup-cover_opened');
-  document.body.style.overflowY = "visible";
 }
 
 const submitLoginForm = (e) => {
@@ -221,18 +219,26 @@ const deleteItemFromBasket = (el) => {
   el.remove();
   productCounter.textContent--
   basketItems = document.querySelectorAll('.popup-basket__item')
-  console.log(basketItems)
+  refreshTotalSum();
 }
 
 deleteButtons.forEach(elem => elem.addEventListener('click', e => deleteItemFromBasket(e.currentTarget.parentElement)))
 
 // Add to basket from section popular
 
-const refreshTotalSum = () => {
-  basketItems = document.querySelectorAll('.popup-basket__item');
-  let basketPrices = [];
-  basketItems.forEach(el => basketPrices.push(+(el.querySelector('.popup-basket__total-price').textContent.replace('₽', ''))))
-  totalSum.textContent = basketPrices.reduce((acc, curr) => acc + curr)
+const refreshTotalSum = (add) => {
+  if (add === 'add') {
+    basketItems = document.querySelectorAll('.popup-basket__item');
+    let basketPrices = [];
+    basketItems.forEach(el => basketPrices.push(+(el.querySelector('.popup-basket__total-price').textContent.replace('₽', ''))))
+    totalSum.textContent = basketPrices.reduce((acc, curr) => acc + curr)
+  }
+  else {
+    basketItems = document.querySelectorAll('.popup-basket__item');
+    let basketPrices = [];
+    basketItems.forEach(el => basketPrices.push(+(el.querySelector('.popup-basket__total-price').textContent.replace('₽', ''))))
+    totalSum.textContent = basketPrices.reduce((acc, curr) => acc + curr)
+  }
 }
 
 const addItemToBasket = (el) => {
@@ -248,7 +254,7 @@ const addItemToBasket = (el) => {
   productCounter.textContent++
   const deleteButton = card.querySelector('.popup-basket__delete-btn');
   deleteButton.addEventListener('click', e => deleteItemFromBasket(e.currentTarget.parentElement))
-  refreshTotalSum();
+  refreshTotalSum('add');
 }
 
 const addButtons = document.querySelectorAll('.slider__basket-btn');
