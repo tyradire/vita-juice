@@ -4,15 +4,13 @@
 .header {
   position: fixed;
   top: 0;
-  max-width: 1920px;
+  width: 100%;
   height: 149px;
   background-color: $white;
-  margin: 0 auto;
   display: flex;
   z-index: 1000;
   @media screen and (max-width: 768px) {
     height: 74px;
-    width: 100%;
     justify-content: space-between;
   }
   &__logo-container {
