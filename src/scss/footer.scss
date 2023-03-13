@@ -6,23 +6,41 @@
   background-color: $green-pine;
   display: flex;
   padding: 48px 0 50px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
   &__call {
     margin: 0;
     margin-left: 68px;
     text-transform: uppercase;
     color: $white;
     @include title-font;
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+      text-align: center;
+      @include item-font-mobile;
+    }
   }
   &__links {
     list-style: none;
     padding-left: 0;
     display: flex;
     margin-left: 186px;
+    @media screen and (max-width: 768px) {
+      margin: 24px auto 0;
+    }
   }
   &__link {
     margin-left: 37px;
     &:first-of-type {
       margin-left: 0;
+    }
+    @media screen and (max-width: 768px) {
+      margin-left: 30px;
+      svg {
+        width: 64px;
+        height: 64px;
+      }
     }
   }
 }
