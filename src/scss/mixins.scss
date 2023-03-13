@@ -79,3 +79,10 @@
   line-height: 36px;
   font-weight: 400;
 }
+
+@mixin card-subtitle-mobile {
+  font-family: 'Bahnschrift';
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+}
