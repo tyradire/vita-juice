@@ -10,19 +10,27 @@
     margin: 0 auto;
     padding-top: 44px;
     padding-bottom: 52px;
+    @media screen and (max-width: 768px) {
+      padding-top: 40px;
+      padding-bottom: 48px;
+    }
   }
   &__title {
     margin: 0;
     text-transform: uppercase;
-    font-family: 'Bahnschrift';
-    font-size: 50px;
-    line-height: 60px;
-    font-weight: 400;
+    @include information-font;
     color: $black-hover;
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      @include information-font-mobile;
+    }
   }
   &__columns {
     margin-top: 12px;
     display: flex;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -32,6 +40,10 @@
       margin: 0;
       color: $black-hover;
       @include advantage-font;
+      @media screen and (max-width: 768px) {
+        @include card-subtitle-mobile;
+        text-align: center;
+      }
     }
   }
   &__list {
@@ -41,13 +53,26 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 38px 168px;
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
   }
   &__link {
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      margin-top: 12px;
+    }
     a {
       margin: 0;
       text-decoration: none;
       color: $black-hover;
       @include advantage-font;
+      @media screen and (max-width: 768px) {
+        @include card-subtitle-mobile;
+      }
     }
   }
 }
