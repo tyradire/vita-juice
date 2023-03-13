@@ -8,11 +8,19 @@
   flex-direction: column;
   border-radius: 50px;
   box-sizing: border-box;
+  
   &__top {
     min-height: 87px;
     width: 100%;
     background-color: $yellow;
     border-radius: 50px 50px 0px 0px;
+    @media screen and (max-width: 768px) {
+      border-radius: 0;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
   &__title {
     margin: 0;
@@ -21,6 +29,10 @@
     text-transform: uppercase;
     color: $black-hover;
     @include volume-font;
+    @media screen and (max-width: 768px) {
+      margin: 0;
+      margin-left: 20px;
+    }
   }
   &__close-btn {
     cursor: pointer;
@@ -31,12 +43,21 @@
     border: none;
     width: 18px;
     height: 18px;
+    @media screen and (max-width: 768px) {
+      position: static;
+      margin-right: 20px;
+      margin-bottom: 5px;
+    }
   }
   &__content {
     padding: 0px 56px 35px 58px;
     height: 368px;
     background-color: $white;
     border-radius: 0 0 50px 50px;
+    @media screen and (max-width: 768px) {
+      border-radius: 0;
+      min-height: 100vh;
+    }
   }
   &__region-subtitle {
     margin: 0;
@@ -68,6 +89,11 @@
     display: grid;
     grid-template-columns: repeat(3, 170px);
     gap: 10px 50px;
+    @media screen and (max-width: 768px) {
+      gap: 0;
+      display: flex;
+      flex-direction: column;
+    }
   }
   &__region-item {
     cursor: pointer;
@@ -76,6 +102,9 @@
     @include button-font;
     &:hover {
       color: $yellow;
+    }
+    @media screen and (max-width: 768px) {
+      margin-top: 6px;
     }
   }
   &_lg {
@@ -116,6 +145,11 @@
     background-color: $yellow;
     text-transform: uppercase;
     @include volume-font;
+  }
+  @media screen and (max-width: 768px) {
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 }
 

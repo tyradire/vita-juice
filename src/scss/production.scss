@@ -43,10 +43,14 @@
     grid-template-columns: repeat(4, 210px);
     gap: 42px 10px;
     @media screen and (max-width: 768px) {
-      top: 23px;
-      right: 14px;
+      position: static;
       grid-template-columns: repeat(2, 140px);
-      gap: 10px;
+      gap: 15px;
+      padding: 0;
+      padding-top: 23px;
+      margin: 0 auto;
+      justify-content: center;
+      overflow-x: hidden;
     }
   }
   &__item  {
