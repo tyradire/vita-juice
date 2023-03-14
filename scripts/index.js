@@ -142,11 +142,19 @@ function selectSlideWithDot(e) {
 
 const openPopup = (elem) => {
   elem.classList.add('popup-cover_opened');
+  if (windowWidth < 768) {
+    document.body.style.overflowY = 'hidden';
+  } else return;
 }
 
 const closePopup = (elem) => {
   elem.classList.remove('popup-cover_opened');
+  if (windowWidth < 768) {
+    document.body.style.overflowY = 'visible';
+  } else return;
 }
+
+console.log(document.body.style.overflowY)
 
 const submitLoginForm = (e) => {
   e.preventDefault();
