@@ -29,6 +29,11 @@
       align-items: center;
       justify-content: space-between;
     }
+    &_region {
+      @media screen and (max-width: 768px) {
+        top: 0;
+      }
+    }
     &_basket {
       width: calc(100% - 60px);
       padding: 0 30px;
@@ -80,6 +85,7 @@
     background-color: $white;
     border-radius: 0 0 50px 50px;
     @media screen and (max-width: 768px) {
+      padding: 64px 56px 35px 29px;
       border-radius: 0;
       min-height: 100vh;
     }
@@ -90,6 +96,10 @@
     text-transform: uppercase;
     color: $black-hover;
     @include volume-font;
+    @media screen and (max-width: 768px) {
+      margin-top: 24px;
+      @include button-font;
+    }
   }
   &__accept-btn {
     cursor: pointer;
@@ -106,6 +116,9 @@
       color: $white;
       background-color: $black-hover;
     }
+    @media screen and (max-width: 768px) {
+      margin-top: 16px;
+    }
   }
   &__region-list {
     list-style: none;
@@ -116,6 +129,7 @@
     gap: 10px 50px;
     @media screen and (max-width: 768px) {
       gap: 0;
+      margin-top: 12px;
       display: flex;
       flex-direction: column;
     }
@@ -130,12 +144,17 @@
     }
     @media screen and (max-width: 768px) {
       margin-top: 6px;
+      @include card-subtitle-mobile;
     }
   }
   &_lg {
     width: 715px;
     height: 455px;
     left: calc(50% - 357.5px);
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      left: 0;
+    }
   }
   &_md {
     width: 627px;
@@ -188,12 +207,14 @@
 .popup-cover {
   display: none;
   position: fixed;
-  width: 100%;
   height: 100%;
   background-color: rgba(196, 196, 196, 0.76);
   z-index: 100;
   &_opened {
     display: block;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
   }
 }
 
