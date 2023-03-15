@@ -1,5 +1,5 @@
 <section class="hero">
-  <div class="popup-cover popup-cover_opened" id="popup-basket">
+  <div class="popup-cover" id="popup-basket">
     <div class="popup popup_basket popup_sm">
       <div class="popup__top popup__top_basket">
         <div>
@@ -10,18 +10,6 @@
             корзина (2)
           </p>
         </div>
-        <!-- <button class="popup-basket__close-btn" id="basket-close-btn">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_307_336)">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.385714 17.6143C0.642857 17.8714 0.9 18 1.28571 18C1.67143 18 1.92857 17.8714 2.18571 17.6143L9 10.8L15.8143 17.6143C16.0714 17.8714 16.4571 18 16.7143 18C16.9714 18 17.3571 17.8714 17.6143 17.6143C18.1286 17.1 18.1286 16.3286 17.6143 15.8143L10.8 9L17.6143 2.18571C18.1286 1.67143 18.1286 0.9 17.6143 0.385714C17.1 -0.128571 16.3286 -0.128571 15.8143 0.385714L9 7.2L2.18571 0.385714C1.67143 -0.128571 0.9 -0.128571 0.385714 0.385714C-0.128571 0.9 -0.128571 1.67143 0.385714 2.18571L7.2 9L0.385714 15.8143C-0.128571 16.3286 -0.128571 17.1 0.385714 17.6143Z" fill="#2B2A29"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_307_336">
-            <rect width="18" height="18" fill="white"/>
-            </clipPath>
-            </defs>
-          </svg>
-        </button> -->
       </div>
       <button class="popup-basket__close-btn" id="basket-close-btn">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,12 +89,14 @@
         <p class="popup-basket__title">Гранатовый сок</p>
         <p class="popup-basket__value">300 мл</p>
         <p class="popup-basket__ingredients">Гранат, лед</p>
-        <div class="popup-basket__counter">
-          <button class="popup-basket__button popup-basket__button_minus">-</button>
-          <span class="popup-basket__total">1</span>
-          <button class="popup-basket__button">+</button>
-        </div>
-        <span class="popup-basket__total-price">575₽</span>
+        <div class="popup-basket__price-wrapper">
+          <div class="popup-basket__counter">
+            <button class="popup-basket__button popup-basket__button_minus">-</button>
+            <span class="popup-basket__total">1</span>
+            <button class="popup-basket__button">+</button>
+          </div>
+          <span class="popup-basket__total-price">575</span>
+        </div> 
       </div>
     </li>
   </template>

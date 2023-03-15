@@ -19,6 +19,10 @@
     background-color: $yellow;
     border-radius: 50px 50px 0px 0px;
     @media screen and (max-width: 768px) {
+      position: absolute;
+      top: -58px;
+      left: 0;
+      z-index: 99999;
       border-radius: 0;
       min-height: 64px;
       display: flex;
@@ -144,8 +148,9 @@
     top: 40px;
     left: calc(100% - 596px);
     @media screen and (max-width: 768px) {
+      height: calc(100% - 126px);
       width: 100%;
-      top: -60px;
+      top: 72px;
       left: 0;
       border-radius: 0;
       background-color: $white;
@@ -174,6 +179,7 @@
     text-transform: uppercase;
     @include volume-font;
     @media screen and (max-width: 768px) {
+      padding: 15px 89px 15px 28px;
       margin-bottom: 0;
     }
   }
@@ -263,7 +269,7 @@
       background-color: $yellow;
     }
     @media screen and (max-width: 768px) {
-      overflow-y: visible;
+      overflow-x: hidden;
       margin-right: 0;
     }
   }
@@ -275,24 +281,41 @@
     &:first-of-type {
       margin-top: 0;
     }
+    @media screen and (max-width: 768px) {
+      min-height: 127px;
+    }
   }
   &__image {
     width: 150px;
     height: auto;
     object-fit: contain;
+    @media screen and (max-width: 768px) {
+      width: 90px;
+      height: 127px;
+    }
   }
   &__title {
-    width: 160px;
+    width: 132px;
     margin: 0;
     color: $black-hover;
     text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @include volume-font;
+    @media screen and (max-width: 768px) {
+      @include basket-font-mobile;
+    }
   }
   &__value {
     margin: 0;
     margin-top: 11px;
     color: $black-hover;
     @include button-font;
+    @media screen and (max-width: 768px) {
+      margin-top: 3px;
+      @include basket-font-mobile;
+    }
   }
   &__ingredients {
     margin: 0;
@@ -300,6 +323,10 @@
     width: 180px;
     color: $grey-dark;
     @include addition-font;
+    @media screen and (max-width: 768px) {
+      margin-top: 3px;
+      @include addition-font;
+    }
   }
   &__counter {
     width: 93px;
@@ -313,6 +340,10 @@
     background-color: $yellow;
     border-radius: 30px;
     @include button-font;
+    @media screen and (max-width: 768px) {
+      width: 88px;
+      height: 30px;
+    }
   }
   &__total {
     margin: 0 10px;
@@ -335,6 +366,12 @@
     color: $black-hover;
     text-transform: uppercase;
     @include volume-font;
+    @media screen and (max-width: 768px) {
+      position: static;
+      margin-top: 14px;
+      margin-right: 20px;
+      @include card-subtitle-mobile;
+    }
   }
   &__delete-btn {
     cursor: pointer;
@@ -347,6 +384,12 @@
     background-color: transparent;
     &:hover svg path {
       fill: $yellow;
+    }
+    @media screen and (max-width: 768px) {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
   &__close-btn {
@@ -362,6 +405,7 @@
       height: 36px;
     }
     @media screen and (max-width: 768px) {
+      display: none;
       top: 18px;
       right: 24px;
       svg {
@@ -370,10 +414,20 @@
       }
     }
   }
+  &__price-wrapper {
+    @media screen and (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
 }
 
 .total {
   &__sum {
     margin: 0;
+    @media screen and (max-width: 768px) {
+      @include card-subtitle-mobile;
+    }
   }
 }
