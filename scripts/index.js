@@ -19,28 +19,28 @@ const cities = [
 const basketData = [
   {
     title: 'Гранатовый сок',
-    image: './images/granate.png',
+    image: '../images/granate.png',
     value: '300 мл',
     ingridients: 'Гранат, лед',
     cost: 575
   },
   {
     title: 'Грин',
-    image: './images/green.png',
+    image: '../images/green.png',
     value: '500 мл',
     ingridients: 'Сельдерей, яблоко, шпинат, спирулина, лед',
     cost: 425
   },
   {
     title: 'Гранатовый сок 2',
-    image: './images/granate.png',
+    image: '../images/granate.png',
     value: '300 мл',
     ingridients: 'Гранат, лед',
     cost: 575
   },
   {
     title: 'Грин',
-    image: './images/green.png',
+    image: '../images/green.png',
     value: '500 мл',
     ingridients: 'Сельдерей, яблоко, шпинат, спирулина, лед',
     cost: 425
@@ -142,19 +142,11 @@ function selectSlideWithDot(e) {
 
 const openPopup = (elem) => {
   elem.classList.add('popup-cover_opened');
-  if (windowWidth < 768) {
-    document.body.style.overflowY = 'hidden';
-  } else return;
 }
 
 const closePopup = (elem) => {
   elem.classList.remove('popup-cover_opened');
-  if (windowWidth < 768) {
-    document.body.style.overflowY = 'visible';
-  } else return;
 }
-
-console.log(document.body.style.overflowY)
 
 const submitLoginForm = (e) => {
   e.preventDefault();
